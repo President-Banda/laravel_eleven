@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('description');
             $table->string('salary');
             $table->timestamps();
+            $table->ForeignIdFor(App\Models\Employer::class);
+            //$table->unsignedBigInteger('employer_id') old way
+            // some sort of foreign key to make each job belong to an employer
         });
     }
 
