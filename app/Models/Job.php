@@ -10,7 +10,10 @@ class Job extends Model{
 
     protected $table = "job_listings";
 
-    protected $fillable = ['title', 'salary', 'description'];
+    //protected $fillable = ['title', 'salary', 'description', 'employer_id'];
+
+    //disable fillable feature by using guarded, empty effectively disables it
+    protected $guarded = [];
 
     public function employer(){
         return $this->belongsTo(Employer::class);
