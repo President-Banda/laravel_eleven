@@ -5,11 +5,13 @@ use App\Models\Job;
 
 
 Route::get('/', function (){
-    
-    //return view('home');
+
+    return view('home');
 });
 
 Route::get('/jobs', function () {
+    $jobs = Job::with('employer')->get();
+
     return view('jobs', [
             'jobs' => Job::all()
 //        "greeting" => "President",  // Allows you to access a variable called $greeting
