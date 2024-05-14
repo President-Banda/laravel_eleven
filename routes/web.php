@@ -10,10 +10,10 @@ Route::get('/', function (){
 });
 
 Route::get('/jobs', function () {
-    $jobs = Job::with('employer')->get();
+    $jobs = Job::with('employer')->simplePaginate(3);
 
     return view('jobs', [
-            'jobs' => Job::all()
+            'jobs' => $jobs
 //        "greeting" => "President",  // Allows you to access a variable called $greeting
 //        "name" => "Titan"
     ]);
