@@ -16,32 +16,49 @@
                         <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
                         <div class="mt-2">
                             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" name="title" id="title" autocomplete="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="IT Lord">
+                                <input type="text" name="title" id="title" autocomplete="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="IT Lord" required>
                             </div>
                         </div>
+                        @error('title')
+                            <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-4">
                         <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
                         <div class="mt-2">
                             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" name="description" id="title" autocomplete="description" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Something something">
+                                <input type="text" name="description" id="description" autocomplete="description" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Something something" required>
                             </div>
                         </div>
+                        @error('description')
+                        <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-4">
                         <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
                         <div class="mt-2">
                             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="number" name="salary" id="salary" autocomplete="salary" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$10,000 per year">
+                                <input type="number" name="salary" id="salary" autocomplete="salary" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$10,000 per year" required>
                             </div>
                         </div>
+                        @error('salary')
+                        <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
-
-
                 </div>
+
+{{--                <div class="mt-28">--}}
+{{--                    @if($errors->any())--}}
+{{--                        <ul>--}}
+{{--                            @foreach($errors->all() as $error)--}}
+{{--                                <li class="text-red-500">{{ $error }}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
             </div>
         </div>
 
