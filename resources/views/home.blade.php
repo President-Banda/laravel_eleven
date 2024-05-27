@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
-        Home Page
+        Landing Page
     </x-slot:heading>
-    <h1> Home Page </h1>
+    <h1> Landing Page </h1>
 
 
 </x-layout>
